@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function AllVisa({visa}) {
-   const {countryImage, countryName, fee,validity} = visa
+   const {_id,countryImage, countryName, fee,validity} = visa
   return (
     <div className="card bg-base-100  shadow-xl">
   <figure className="px-10 pt-10">
@@ -16,7 +16,8 @@ export default function AllVisa({visa}) {
     <p>Fee:${fee}</p>
     <p>{validity}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Show Details</button>
+      <Link to={`/visa-details/${_id}`} className="btn btn-primary">Show Details</Link>
+      
     </div>
   </div>
 </div>

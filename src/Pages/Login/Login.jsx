@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
 import { toast, ToastContainer } from 'react-toastify';
@@ -10,7 +10,8 @@ import Footer from '../Footer/Footer';
 
 export default function Login() {
     const {handleLogin} = useContext(AuthContext)
-   
+   const navigate = useNavigate()
+   const location = useLocation()
         const handleLoginSubmit=(e)=>{
             e.preventDefault();
             const email = e.target.email.value;
@@ -21,7 +22,7 @@ export default function Login() {
             handleLogin(email, password)
             .then((result)=>{
                 console.log(result.user)
-                // navigate(location?.state?location.state:"/")
+                navigate(location?.state?location.state:"/")
             })
             .catch((error)=>{
                 console.log(error)
