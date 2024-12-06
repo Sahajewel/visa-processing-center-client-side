@@ -52,10 +52,11 @@ export const router = createBrowserRouter([
   path: "visa-applications",
   element: <VisaApplications></VisaApplications>
  },
- {
-  path: "/latest-visa",
-  element: <LatestVisa></LatestVisa>
- }
+//  {
+//   path: "/latest-visa",
+//   element: <LatestVisa></LatestVisa>,
+//   loader: ()=>fetch("http://localhost:5000/latest-visas")
+//  }
  
 ]);
 

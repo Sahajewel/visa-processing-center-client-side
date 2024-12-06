@@ -16,7 +16,7 @@ export default function AllVisa({visa}) {
     <p>Fee:${fee}</p>
     <p>{validity}</p>
     <div className="card-actions">
-      <Link to={`/visa-details/${_id}`} className="btn btn-primary">Show Details</Link>
+      <Link to={`/visa-details/${_id}`} className="btn btn-primary">See Details</Link>
       
     </div>
   </div>

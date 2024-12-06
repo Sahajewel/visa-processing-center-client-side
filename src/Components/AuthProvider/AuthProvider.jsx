@@ -40,6 +40,7 @@ export default function AuthProvider({children}) {
         handleLogin,
         logout,
         loginUser,
+        setLoginUser,
         loading
     }
   return (

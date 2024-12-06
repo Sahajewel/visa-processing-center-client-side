@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {  toast, ToastContainer } from "react-toastify";
 import Navbar from '../../Components/Navbar/Navbar';
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
@@ -10,7 +10,9 @@ import Footer from '../Footer/Footer';
 
 
 export default function Register() {
-    const {handleRegister, handleUpdateUser} = useContext(AuthContext)
+    const {handleRegister, handleUpdateUser,  loginUser, setLoginUser} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
     const handleRegisterSubmit=(e)=>{
         e.preventDefault();
         const name = e.target.name.value;
@@ -37,10 +39,11 @@ export default function Register() {
         handleRegister(email, password)
       .then((result)=>{
             console.log(result.user)
-            // navigate("/")
+            navigate(location?.state?location.state:"/")
             handleUpdateUser(name, photo)
             .then((result)=>{
                 console.log(result)
+                // setLoginUser(result.user)
                 
             })
             .catch((error)=>{
@@ -59,11 +62,12 @@ export default function Register() {
         signInWithPopup(auth, provider)
         .then((result)=>{
         console.log(result.user)
-        // setUser(result.user)
-        // navigate(location?.state?location.state:"/")
+        // setLoginUser(result.user)
+        navigate("/")
         }).catch((error)=>{
         console.log(error)
-        // setUser(null)
+        toast("Invalid authentication")
+        // setLoginUser(null)
         })
           }
   return (
