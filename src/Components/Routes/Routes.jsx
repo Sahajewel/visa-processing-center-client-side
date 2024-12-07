@@ -11,9 +11,8 @@ import Register from "../../Pages/Register/Register";
 import AddVisa from "../../Pages/AddVisa/AddVisa";
 import AllVisas from "../../Pages/AllVisas/AllVisas";
 import VisaDetails from "../../Pages/VisaDetails/VisaDetails";
-import VisaApplications from "../../Pages/VisaApplications/VisaApplications";
-import LatestVisa from "../../Pages/LatestVisa/LatestVisa";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import MyVisaApplications from "../../Pages/myVisaApplications/MyVisaApplications";
 
 
 export const router = createBrowserRouter([
@@ -39,7 +38,7 @@ export const router = createBrowserRouter([
     element: <PrivateRoutes><AddVisa></AddVisa></PrivateRoutes>
  }, 
  {
-  path: "/all-vasas",
+  path: "/all-visas",
   element: <AllVisas></AllVisas>,
   loader: ()=>fetch("http://localhost:5000/all-visas")
  },
@@ -49,14 +48,10 @@ export const router = createBrowserRouter([
   loader: ({params})=>fetch(`http://localhost:5000/all-visas/${params.id}`)
  },
  {
-  path: "visa-applications",
-  element: <VisaApplications></VisaApplications>
+  path: "/my-visa-applications/",
+  element: <MyVisaApplications></MyVisaApplications>,
+  loader: ()=>fetch("http://localhost:5000/users")
  },
-//  {
-//   path: "/latest-visa",
-//   element: <LatestVisa></LatestVisa>,
-//   loader: ()=>fetch("http://localhost:5000/latest-visas")
-//  }
- 
+
 ]);
 

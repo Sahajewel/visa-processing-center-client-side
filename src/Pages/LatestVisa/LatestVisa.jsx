@@ -3,17 +3,13 @@ import { Link } from 'react-router-dom'
 
 export default function LatestVisa() {
   const [latest, setLatest] = useState([])
-  // const [applications, setApplication] = useState([])
+
   useEffect(()=>{
     fetch("http://localhost:5000/latest-visas")
     .then((res)=>res.json())
     .then((result)=>setLatest(result))
   }, [])
-  // useEffect(()=>{
-  //   fetch("http://localhost:5000/users")
-  //   .then((res)=>res.json())
-  //   .then((result)=>setApplication(result))
-  // },[])
+ 
  
   return (
    <div className='mx-auto w-10/12 my-10'>

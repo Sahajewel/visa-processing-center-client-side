@@ -8,8 +8,9 @@ export default function Navbar() {
     const {loginUser, logout} = useContext(AuthContext)
     const links = <div>
         <NavLink className="mr-3 btn text-lg " to="/">Home</NavLink>
+        <NavLink className="mr-3 btn text-lg " to="/all-visas">All Visas</NavLink>
         <NavLink className="mr-3 btn text-lg " to="/add-visa">Add Visa</NavLink>
-        <NavLink className="mr-3 btn text-lg " to="/all-vasas">All Visas</NavLink>
+        <NavLink className="mr-3 btn text-lg " to="/my-visa-applications">My Visa Application</NavLink>
     </div>
   return (
     <div className="navbar bg-indigo-800 px-16">

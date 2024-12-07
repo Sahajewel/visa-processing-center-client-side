@@ -14,7 +14,8 @@ export default function VisaDetails() {
     const fName = form.fName.value
     const lName = form.lName.value
     const fee = form.fee.value
-    const users =({email, fName, lName,fee})
+
+    const users =({email, fName, lName,fee,countryImage,countryName,description,age, fee,validity, application})
     fetch("http://localhost:5000/users",{
         method: "POST",
         headers:{
