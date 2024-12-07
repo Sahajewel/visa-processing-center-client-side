@@ -13,6 +13,7 @@ import AllVisas from "../../Pages/AllVisas/AllVisas";
 import VisaDetails from "../../Pages/VisaDetails/VisaDetails";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import MyVisaApplications from "../../Pages/myVisaApplications/MyVisaApplications";
+import MyAddedVisa from "../../Pages/MyAddedVisa/MyAddedVisa";
 
 
 export const router = createBrowserRouter([
@@ -40,18 +41,22 @@ export const router = createBrowserRouter([
  {
   path: "/all-visas",
   element: <AllVisas></AllVisas>,
-  loader: ()=>fetch("http://localhost:5000/all-visas")
+  loader: ()=>fetch("https://assignment-10-server-flax-delta.vercel.app/all-visas")
  },
  {
   path: "/visa-details/:id",
   element: <VisaDetails></VisaDetails>,
-  loader: ({params})=>fetch(`http://localhost:5000/all-visas/${params.id}`)
+  loader: ({params})=>fetch(`https://assignment-10-server-flax-delta.vercel.app/all-visas/${params.id}`)
  },
  {
   path: "/my-visa-applications/",
   element: <MyVisaApplications></MyVisaApplications>,
-  loader: ()=>fetch("http://localhost:5000/users")
+  loader: ()=>fetch("https://assignment-10-server-flax-delta.vercel.app/users")
  },
+ {
+  path: "/my-added-visa",
+  element: <MyAddedVisa></MyAddedVisa>,
+ }
 
 ]);
 

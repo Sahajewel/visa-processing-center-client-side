@@ -16,7 +16,7 @@ export default function AddVisa() {
         const application = form.application.value;
      const addVisa = ({countryImage, countryName,description, age, fee, validity,application})
      toast("added visa successfully")
-        fetch("http://localhost:5000/add-visa",{
+        fetch("https://assignment-10-server-flax-delta.vercel.app/add-visa",{
           method: "POST",
           headers: {
             "content-type": "application/json"
@@ -33,10 +33,10 @@ export default function AddVisa() {
    <div>
     <Navbar></Navbar>
     <ToastContainer></ToastContainer>
-    <div className="card bg-gray-500 w-10/12 mx-auto max-w-sm shrink-0 shadow-2xl my-10 ">
+    <div className="card bg-gray-500 w-10/12 mx-auto  shrink-0 shadow-2xl my-10 ">
     <h1 className='text-center text-3xl font-bold text-white my-5'>Add Visa Form</h1>
-    <form onSubmit={handleAddVisa} className="card-body">
-      <div className="form-control ">
+    <form onSubmit={handleAddVisa} className="card-body w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="form-control col-s">
         <label className="label">
           <span className="label-text text-white">Country Image</span>
         </label>
@@ -49,13 +49,7 @@ export default function AddVisa() {
         <input name='countryName' type="text" placeholder="country name" className="input input-bordered" required />
        
       </div>
-      <div className="form-control">
-        <label className="label">
-          <span className="label-text text-white">Description</span>
-        </label>
-        <input name='description' type="text" placeholder="Description" className="input input-bordered" required />
-       
-      </div>
+     
       <div className="form-control">
         <label className="label">
           <span className="label-text text-white">Age Restriction</span>
@@ -84,7 +78,15 @@ export default function AddVisa() {
         <input name='application' type="text" placeholder="application method" className="input input-bordered" required />
        
       </div>
-      <div className="form-control mt-6">
+      <div className="form-control col-span-2">
+        <label className="label">
+          <span className="label-text text-white">Description</span>
+        </label>
+        {/* <input name='description' type="text" placeholder="Description" className="input input-bordered" required /> */}
+       <textarea name="description"  placeholder='Description' id=""></textarea>
+       
+      </div>
+      <div className="form-control mt-6 col-span-2">
         <button type='submit' className="btn btn-accent text-white">Add Visa</button>
       </div>
     </form>

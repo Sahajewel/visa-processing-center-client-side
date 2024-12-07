@@ -11,6 +11,7 @@ export default function Navbar() {
         <NavLink className="mr-3 btn text-lg " to="/all-visas">All Visas</NavLink>
         <NavLink className="mr-3 btn text-lg " to="/add-visa">Add Visa</NavLink>
         <NavLink className="mr-3 btn text-lg " to="/my-visa-applications">My Visa Application</NavLink>
+        <NavLink className="mr-3 btn text-lg " to="/my-added-visa">My Added Visa</NavLink>
     </div>
   return (
     <div className="navbar bg-indigo-800 px-16">

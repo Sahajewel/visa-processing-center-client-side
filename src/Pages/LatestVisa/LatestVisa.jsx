@@ -5,7 +5,7 @@ export default function LatestVisa() {
   const [latest, setLatest] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:5000/latest-visas")
+    fetch("https://assignment-10-server-flax-delta.vercel.app/latest-visas")
     .then((res)=>res.json())
     .then((result)=>setLatest(result))
   }, [])

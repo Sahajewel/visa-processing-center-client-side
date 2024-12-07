@@ -21,7 +21,7 @@ console.log(matchCountries)
 
 const handleDelete =(id)=>{
 
-fetch(`http://localhost:5000/users/${id}`,{
+fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
   method: "DELETE"
 })
 .then((res)=>res.json())
