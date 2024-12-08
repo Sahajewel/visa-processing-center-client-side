@@ -17,6 +17,7 @@ export default function VisaDetails() {
     const fee = form.fee.value
 
     const users =({email, fName, lName,fee,countryImage,countryName,description,age, fee,validity, application,visaType,time})
+    form.reset()
     fetch("https://assignment-10-server-flax-delta.vercel.app/users",{
         method: "POST",
         headers:{

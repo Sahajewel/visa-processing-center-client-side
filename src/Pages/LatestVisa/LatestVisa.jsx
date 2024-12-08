@@ -34,7 +34,7 @@ export default function LatestVisa() {
           <p>Visa Type : {update.visaType}</p>
           <p>Time: {update.time}</p>
           <p>Fee:${update.fee}</p>
-          <p>{update.validity}</p>
+          <p>Validity: {update.validity}</p>
         
           <div className="card-actions">
             <Link to={`/visa-details/${update._id}`} className="btn btn-primary">See Details</Link>

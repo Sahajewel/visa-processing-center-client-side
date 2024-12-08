@@ -68,10 +68,10 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
     <div className="card-body items-center text-center">
       <h2 className="card-title">Country: {application.countryName}</h2>
       <figure className="px-10 pt-10">
-      <img
+      <img 
         src={application.countryImage}
         alt="Shoes"
-        className="rounded-xl" />
+        className="rounded-xl w-40" />
     </figure>
     <p>Visa Type: {application.visaType}</p>
     <p>Time: {application.time}</p>

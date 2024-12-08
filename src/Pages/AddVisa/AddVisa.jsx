@@ -18,7 +18,7 @@ export default function AddVisa() {
         const time = form.time.value;
         const valid = form.valid.value;
      const addVisa = ({countryImage, countryName,description, age, fee, validity,application, visaType, time, valid})
-    console.log(addVisa)
+  form.reset()
      toast("added visa successfully")
         fetch("https://assignment-10-server-flax-delta.vercel.app/add-visa",{
           method: "POST",

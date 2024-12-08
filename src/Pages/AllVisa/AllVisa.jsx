@@ -11,10 +11,10 @@ export default function AllVisa({visa}) {
     <div className="card bg-base-100  shadow-xl">
      
   <figure className="px-10 pt-10">
-    <img
+    <img 
       src={countryImage}
       alt="Shoes"
-      className="rounded-xl" />
+      className="rounded-xl w-40" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Country: {countryName}</h2>
