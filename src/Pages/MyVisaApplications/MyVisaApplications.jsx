@@ -45,15 +45,17 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
     <div >
       <Navbar></Navbar>
     <div>
-    <div className='w-10/12 mx-auto'>
+    <div className='w-10/12 mx-auto min-h-[70vh]'>
    
     <h1 className='text-center text-4xl font-extrabold my-8'>My Visa Applications</h1>
-    <input
+  <div className='flex justify-center'>
+  <input
   type="text"
   value={searchCountry}
-  placeholder="Type here"
+  placeholder="Search Your Country"
   className="input input-bordered input-info w-full max-w-xs" onChange={(e)=>setSearchCountry(e.target.value)}/>
-  <button onClick={handleChange}>Search</button>
+  <button className='btn bg-slate-300 text-black ml-4' onClick={handleChange}>Search</button>
+  </div>
   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10'>
 {
     addsVisa.map((application)=><div key={application._id} className="card bg-base-100  shadow-xl">

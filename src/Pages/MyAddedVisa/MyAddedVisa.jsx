@@ -59,7 +59,8 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/update/${email}`,{
     <div>
         <Navbar></Navbar>
         <ToastContainer></ToastContainer>
-   <div className='mx-auto w-6/12 bg-gray-500'>
+  <div className='min-h-[70vh]'>
+  <div className='mx-auto w-6/12 bg-gray-500 '>
    <p className='text-center my-10 py-5 text-white text-2xl font-bold'>{addedVisa.countryName}</p>
    <img className='w-40 mx-auto' src={addedVisa.countryImage} alt="" />
    <p className='text-center text-white my-5 text-lg'>{addedVisa.fee}</p>
@@ -134,11 +135,12 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/update/${email}`,{
   </div>
 </dialog>
    </div>
-   <div  className='flex justify-center mt-4 pb-4 mb-8'>
+   <div  className='flex justify-center mt-4 pb-8'>
 
    <button onClick={()=>handleDeleteVisa(loginUser?.email)} className='btn '>Delete</button>
    </div>
    </div>
+  </div>
       <Footer></Footer>
     </div>
   )

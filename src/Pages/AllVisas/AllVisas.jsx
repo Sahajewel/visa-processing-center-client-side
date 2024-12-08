@@ -10,7 +10,7 @@ export default function AllVisas() {
   return (
     <div>
       <Navbar></Navbar>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-10/12 mx-auto gap-5 my-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-10/12 mx-auto gap-5 my-10 min-h-[70vh]'>
         {visas.map((visa)=><AllVisa key={visa._id} visa={visa}></AllVisa>)}
       </div>
       <Footer></Footer>

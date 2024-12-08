@@ -45,6 +45,18 @@ export default function Carousel() {
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content text-center bg-gray-500">
     <div className="max-w-md">
+    <div className='text-3xl mb-5 text-green-500 font-bold pt-3'>
+   <Typewriter
+        words={["Hello, Users! Welcome to our Website!"]}
+        loop={0} // Set to 0 for infinite loops
+        cursor
+        cursorStyle="|"
+        typeSpeed={70}
+        deleteSpeed={50}
+        delaySpeed={1000}
+        
+      />
+   </div>
       <h1 className="mb-5 text-5xl font-bold">Document Verification</h1>
       <p className="mb-5">
       The center verifies the authenticity of documents submitted for visa applications, ensuring that the information provided meets the requirements of the embassy or consulate.
@@ -62,6 +74,18 @@ export default function Carousel() {
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content text-center bg-gray-500">
     <div className="max-w-md">
+    <div className='text-3xl mb-5 text-green-500 font-bold pt-3'>
+   <Typewriter
+        words={["Hello, Users! Welcome to our Website!"]}
+        loop={0} // Set to 0 for infinite loops
+        cursor
+        cursorStyle="|"
+        typeSpeed={70}
+        deleteSpeed={50}
+        delaySpeed={1000}
+        
+      />
+   </div>
       <h1 className="mb-5 text-5xl font-bold">Application Assistance</h1>
       <p className="mb-5">
       The center helps applicants complete their visa applications correctly, ensuring all required documentation is included, such as identification, proof of travel, and financial stability.
