@@ -6,7 +6,8 @@ import Footer from '../Footer/Footer'
 export default function VisaDetails() {
  
     const visa = useLoaderData()
-    const {_id,countryImage, countryName,description,age, fee,validity, application} = visa
+    const {_id,countryImage, countryName,visaType,description,age, fee,validity, application, time, valid} = visa
+    console.log(visa)
   const handleApplyVisa = (e)=>{
     e.preventDefault()
     const form = e.target;
@@ -15,7 +16,7 @@ export default function VisaDetails() {
     const lName = form.lName.value
     const fee = form.fee.value
 
-    const users =({email, fName, lName,fee,countryImage,countryName,description,age, fee,validity, application})
+    const users =({email, fName, lName,fee,countryImage,countryName,description,age, fee,validity, application,visaType,time})
     fetch("https://assignment-10-server-flax-delta.vercel.app/users",{
         method: "POST",
         headers:{
@@ -31,7 +32,7 @@ export default function VisaDetails() {
   return (
     <div>
         <Navbar></Navbar>
-        <div className="card bg-red-100   shadow-xl w-10/12 mx-auto min-h-[70vh]">
+        <div className="card bg-gray-300   shadow-xl w-10/12 mx-auto min-h-[70vh] text-purple-400 my-20">
   <figure className="px-10 pt-10">
     <img
       src={countryImage}
@@ -40,11 +41,15 @@ export default function VisaDetails() {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Country: {countryName}</h2>
-    <p>{description}</p>
+    <p>Visa Type: {visaType}</p>
+    <p>Time: {time}</p>
+   
+   
     <p>Age: {age}</p>
     <p>Fee:${fee}</p>
-    <p>{validity}</p>
-    <p>{application}</p>
+    <p>Validity: {validity}</p>
+    <p>Application Method: {application}</p>
+    <p>Description: {description}</p>
     <div className="card-actions">
       {/* Open the modal using document.getElementById('ID').showModal() method */}
 <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Apply for the visa</button>

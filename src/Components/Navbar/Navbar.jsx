@@ -15,7 +15,7 @@ export default function Navbar() {
         <NavLink className="mr-3 btn text-lg " to="/my-added-visa">My Added Visa</NavLink>
     </div>
   return (
-    <div className="navbar bg-indigo-800 px-16">
+    <div className="navbar bg-gray-800 px-16">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

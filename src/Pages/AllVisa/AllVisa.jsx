@@ -19,7 +19,7 @@ export default function AllVisa({visa}) {
   <div className="card-body items-center text-center">
     <h2 className="card-title">Country: {countryName}</h2>
     <p>Fee:${fee}</p>
-    <p>{validity}</p>
+    <p>Validity: {validity}</p>
     <div className="card-actions">
     
       

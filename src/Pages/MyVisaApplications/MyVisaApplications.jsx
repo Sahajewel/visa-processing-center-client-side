@@ -1,6 +1,7 @@
 import React, {  useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../Footer/Footer'
+import { toast, ToastContainer } from 'react-toastify'
 // import {  Link, useLoaderData } from 'react-router-dom'
 
 export default function MyVisaApplications() {
@@ -34,6 +35,9 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
 .then((res)=>res.json())
 .then((result)=>{
   console.log(result)
+  const remainingCountry = addsVisa.filter((visa)=> visa._id !== id)
+  setAddVisa(remainingCountry)
+  toast("Cancled")
 })
 }
   
@@ -44,6 +48,7 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
   return (
     <div >
       <Navbar></Navbar>
+      <ToastContainer></ToastContainer>
     <div>
     <div className='w-10/12 mx-auto min-h-[70vh]'>
    
@@ -68,10 +73,13 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
         alt="Shoes"
         className="rounded-xl" />
     </figure>
+    <p>Visa Type: {application.visaType}</p>
+    <p>Time: {application.time}</p>
       <p>Fee:${application.fee}</p>
-      <p>{application.validity}</p>
-      <p>{application.fName} {application.lName}</p>
-      <p>{application.email}</p>
+      <p>Vality:{application.validity}</p>
+      <p>Name: {application.fName} {application.lName}</p>
+      <p>Email: {application.email}</p>
+     
     
       <div className="card-actions">
         <button onClick={()=>handleDelete(application._id)} className="btn btn-primary">Cancel</button>

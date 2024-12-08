@@ -16,7 +16,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="flex justify-end p-4">
+    <div className="flex justify-end p-4 bg-green-200 mr-6">
       <label className="swap swap-rotate">
         {/* This hidden checkbox controls the state */}
         <input

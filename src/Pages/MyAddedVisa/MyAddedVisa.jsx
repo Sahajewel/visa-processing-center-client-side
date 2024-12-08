@@ -7,15 +7,16 @@ import { useLoaderData } from 'react-router-dom'
 
 export default function MyAddedVisa() {
   // const updateVisa = useLoaderData()
-  // // console.log(updateVisa)
+  // console.log(updateVisa)
   const {loginUser} = useContext(AuthContext)
 const [addedVisa, setAddedVisa] = useState([])
+
   useEffect(()=>{
   fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${loginUser?.email}`)
   .then((res)=>res.json())
   .then((result)=>setAddedVisa(result))
-  },[addedVisa])
- 
+  },[])
+ console.log(addedVisa)
   const handleUpdateVisa=(e)=>{
 e.preventDefault()
 const form = e.target;
@@ -50,6 +51,9 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/update/${email}`,{
 .then((res)=>res.json())
 .then((result)=>{
   console.log(result)
+// const findMethod = addedVisa.find((findVisa)=> findVisa.email === email)
+// setAddedVisa(findMethod)
+  toast("Deleted Successfully")
 })
   }
   
@@ -60,12 +64,17 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/update/${email}`,{
         <Navbar></Navbar>
         <ToastContainer></ToastContainer>
   <div className='min-h-[70vh]'>
-  <div className='mx-auto w-6/12 bg-gray-500 '>
-   <p className='text-center my-10 py-5 text-white text-2xl font-bold'>{addedVisa.countryName}</p>
+  <div className='mx-auto w-6/12 bg-gray-500 my-10'>
+  <h1 className='text-3xl font-bold pt-8 text-white text-center'>My Added Visa</h1>
+   <p className='text-center my-10 py-5 text-white text-2xl font-bold'>Country: {addedVisa.countryName}</p>
    <img className='w-40 mx-auto' src={addedVisa.countryImage} alt="" />
-   <p className='text-center text-white my-5 text-lg'>{addedVisa.fee}</p>
-   <p className='text-center text-white my-5 text-lg pb-5'>{addedVisa.validity}</p>
-   <p>{addedVisa.application_method}</p>
+  <p className='text-center text-white mb-2 mt-4'>Visa Type : {addedVisa.visaType}</p>
+  <p className='text-center text-white mb-2'>Time: {addedVisa.time}</p>
+   <p className='text-center text-white my-5 text-lg'>Fee: ${addedVisa.fee}</p>
+   <p className='text-center text-white my-5 text-lg pb-5'>Validity: {addedVisa.validity}</p>
+   <p className='text-center text-white mb-2'>Application Method: {addedVisa.application}</p>
+   <p className='text-center text-white mb-2'>Age: {addedVisa.age}</p>
+   <p className='text-center text-white mb-2'>Description: {addedVisa.description}</p>
    <div className='flex  justify-center'>
   {/* Open the modal using document.getElementById('ID').showModal() method */}
 <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Update</button>

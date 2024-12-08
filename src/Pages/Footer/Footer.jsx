@@ -2,7 +2,7 @@ import React from 'react'
 import footerImage from "./logo.jpg"
 export default function Footer() {
   return (
-  <div className='bg-indigo-800 text-white '>
+  <div className='bg-gray-800 text-white '>
       <footer className="footer  text-base-content p-10 flex sm:flex-col md:flex-row justify-between items-center w-11/12 mx-auto">
    
       <nav className='text-white text-2xl font-bold'>
