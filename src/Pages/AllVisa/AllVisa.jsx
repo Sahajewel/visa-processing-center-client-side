@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Components/AuthProvider/AuthProvider'
 
 
 export default function AllVisa({visa}) {
+
    const {_id,countryImage, countryName, fee,validity} = visa
+   const {loginUser} = useContext(AuthContext)
   return (
     <div className="card bg-base-100  shadow-xl">
      
@@ -18,8 +21,11 @@ export default function AllVisa({visa}) {
     <p>Fee:${fee}</p>
     <p>{validity}</p>
     <div className="card-actions">
-      <Link to={`/visa-details/${_id}`} className="btn btn-primary">See Details</Link>
+    
       
+    
+      <Link   to={`/visa-details/${_id}`} className="btn btn-primary">See Details</Link>
+     
     </div>
   </div>
 </div>

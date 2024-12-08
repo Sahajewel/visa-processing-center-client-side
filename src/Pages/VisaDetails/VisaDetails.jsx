@@ -31,12 +31,12 @@ export default function VisaDetails() {
   return (
     <div>
         <Navbar></Navbar>
-        <div className="card bg-red-100   shadow-xl w-10/12 mx-auto">
+        <div className="card bg-red-100   shadow-xl w-10/12 mx-auto min-h-[70vh]">
   <figure className="px-10 pt-10">
     <img
       src={countryImage}
       alt="Shoes"
-      className="rounded-xl" />
+      className="rounded-xl w-32" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Country: {countryName}</h2>
