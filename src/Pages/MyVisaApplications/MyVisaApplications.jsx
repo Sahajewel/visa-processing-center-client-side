@@ -1,20 +1,27 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../Footer/Footer'
-import {  Link, useLoaderData } from 'react-router-dom'
+// import {  Link, useLoaderData } from 'react-router-dom'
 
 export default function MyVisaApplications() {
-  const applications = useLoaderData()
+  // const applications = useLoaderData()
 
-  const [addsVisa, setAddVisa] = useState(applications)
-const [searchCountry, setSearchCountry] = useState()
+  const [addsVisa, setAddVisa] = useState([])
+const [searchCountry, setSearchCountry] = useState("")
 
-  
+useEffect(()=>{
+  fetch(`https://assignment-10-server-flax-delta.vercel.app/users`)
+  .then((res)=>res.json())
+  .then((result)=>setAddVisa(result))
+  },[])
+console.log(addsVisa)
  const handleChange=()=>{
   const matchCountries = addsVisa.filter((countries)=>
     countries.countryName.toLowerCase().includes(searchCountry.toLocaleLowerCase())
+
     )
-console.log(matchCountries)
+    console.log(matchCountries)
+setAddVisa(matchCountries)
  }
 
 
@@ -49,7 +56,7 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
   <button onClick={handleChange}>Search</button>
   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10'>
 {
-    applications.map((application)=><div key={application._id} className="card bg-base-100  shadow-xl">
+    addsVisa.map((application)=><div key={application._id} className="card bg-base-100  shadow-xl">
    
     <div className="card-body items-center text-center">
       <h2 className="card-title">Country: {application.countryName}</h2>

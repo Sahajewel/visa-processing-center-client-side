@@ -49,13 +49,14 @@ export const router = createBrowserRouter([
   loader: ({params})=>fetch(`https://assignment-10-server-flax-delta.vercel.app/all-visas/${params.id}`)
  },
  {
-  path: "/my-visa-applications/",
+  path: "/my-visa-applications",
   element: <PrivateRoutes><MyVisaApplications></MyVisaApplications></PrivateRoutes>,
-  loader: ()=>fetch("https://assignment-10-server-flax-delta.vercel.app/users")
+  // loader: ()=>fetch("https://assignment-10-server-flax-delta.vercel.app/users")
  },
  {
   path: "/my-added-visa",
   element: <PrivateRoutes><MyAddedVisa></MyAddedVisa></PrivateRoutes>,
+  // loader: ()=>fetch(`https://assignment-10-server-flax-delta.vercel.app/users`)
  }
 
 ]);
