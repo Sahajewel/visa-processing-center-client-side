@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 export default function AllVisa({visa}) {
    const {_id,countryImage, countryName, fee,validity} = visa
   return (
     <div className="card bg-base-100  shadow-xl">
+     
   <figure className="px-10 pt-10">
     <img
       src={countryImage}

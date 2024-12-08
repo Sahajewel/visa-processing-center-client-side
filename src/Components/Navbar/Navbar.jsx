@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import logo from "./logo.jpg"
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../AuthProvider/AuthProvider'
+import ThemeToggle from '../Theme/ThemeToggle'
 
 // import ReactTooltip from 'react-tooltip';
 export default function Navbar() {
@@ -46,11 +47,19 @@ export default function Navbar() {
     {links}
     </ul>
   </div>
+
   <div className="navbar-end">
+  <ThemeToggle></ThemeToggle>
   {
           loginUser && loginUser? <div className='flex justify-center items-center'>
-             <img className='w-10 h-10 rounded-full' src={loginUser?.photoURL} alt="" />
-             <button  className='text-white ml-5 px-3 py-2 text-lg rounded-xl hover:bg-gray-300 duration-300 hover:text-black bg-gray-500' onClick={logout}>Logout</button>
+             <div className='group relative duration-500'>
+             <img className='w-10 h-10 rounded-full duration-500' src={loginUser?.photoURL} alt="" />
+            
+             <div className='hidden group-hover:block absolute top-12 -right-10 bg-white p-3 rounded-lg duration-500'>
+              <h1 className='text-gray-500 mb-2 text-center'>{loginUser?.displayName}</h1>
+             <button  className='text-white text-center mx-auto ml-5 px-3 py-2 text-lg rounded-xl hover:bg-gray-300 duration-300 hover:text-black bg-gray-500' onClick={logout}>Logout</button>
+             </div>
+             </div>
             
           </div>
           :

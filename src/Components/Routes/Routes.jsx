@@ -50,12 +50,12 @@ export const router = createBrowserRouter([
  },
  {
   path: "/my-visa-applications/",
-  element: <MyVisaApplications></MyVisaApplications>,
+  element: <PrivateRoutes><MyVisaApplications></MyVisaApplications></PrivateRoutes>,
   loader: ()=>fetch("https://assignment-10-server-flax-delta.vercel.app/users")
  },
  {
   path: "/my-added-visa",
-  element: <MyAddedVisa></MyAddedVisa>,
+  element: <PrivateRoutes><MyAddedVisa></MyAddedVisa></PrivateRoutes>,
  }
 
 ]);

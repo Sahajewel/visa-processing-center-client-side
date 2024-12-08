@@ -39,6 +39,7 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/users/${id}`,{
       <Navbar></Navbar>
     <div>
     <div className='w-10/12 mx-auto'>
+   
     <h1 className='text-center text-4xl font-extrabold my-8'>My Visa Applications</h1>
     <input
   type="text"

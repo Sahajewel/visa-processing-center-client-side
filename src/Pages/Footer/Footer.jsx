@@ -1,17 +1,23 @@
 import React from 'react'
-
+import footerImage from "./logo.jpg"
 export default function Footer() {
   return (
   <div className='bg-indigo-800 text-white '>
       <footer className="footer  text-base-content p-10 flex sm:flex-col md:flex-row justify-between items-center w-11/12 mx-auto">
+   
+      <nav className='text-white text-2xl font-bold'>
+      <h1>JKS Global</h1>
+      <img className='w-16 h-16 rounded-full mx-auto' src={footerImage} alt="" />
+    </nav>
     <nav className='text-center'>
      <h1 className='text-white text-2xl font-bold text-center'>Contact Information</h1>
     <p className='text-lg text-white'>phone:080 5052 6822</p>
     <p className='text-lg text-white'>Tokyo, Saitama, Japan</p>
     </nav>
+    
   
     <nav>
-      <h6 className="footer-title text-white">Social</h6>
+      <h6 className=" text-white text-2xl font-bold">Social</h6>
       <div className="grid grid-flow-col gap-4">
         <a>
           <svg
@@ -50,7 +56,7 @@ export default function Footer() {
     </nav>
     
   </footer>
-  <p className='text-center text-white pt-5 pb-5 text-lg bg-indigo-400'>All right reserved lingo bingo @2024</p>
+  <p className='text-center text-white pt-5 pb-5 text-lg bg-indigo-400'>All right reserved JKS Global @2024</p>
   </div>
   )
 }

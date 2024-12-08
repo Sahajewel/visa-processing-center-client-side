@@ -1,4 +1,5 @@
 import React from 'react';
+import { Slide } from 'react-awesome-reveal';
 
 const VisaProcessSteps = () => {
   const steps = [
@@ -27,10 +28,13 @@ const VisaProcessSteps = () => {
   return (
     <div className="bg-gray-400 py-10 w-10/12 mx-auto my-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-white py-8 text-center mb-8">
+      <Slide direction="left" duration={1000} delay={300} triggerOnce>
+      <h2 className="text-4xl font-bold text-white py-8 text-center mb-8">
           Our Simple 4-Step Visa Process
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+</Slide>
+<Slide direction="right" duration={1000} delay={300} triggerOnce>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -42,6 +46,9 @@ const VisaProcessSteps = () => {
             </div>
           ))}
         </div>
+</Slide>
+       
+       
       </div>
     </div>
   );

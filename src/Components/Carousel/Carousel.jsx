@@ -1,6 +1,7 @@
 import React from 'react'
 import caro1 from "./caro1.webp"
 import caro2 from "./caro-2.webp"
+import { Typewriter } from "react-simple-typewriter";
 export default function Carousel() {
   return (
  <div>
@@ -11,9 +12,23 @@ export default function Carousel() {
   >
     <img className='h-[500px] w-full' src={caro1} alt="" />
   <div className="hero-overlay bg-opacity-60"></div>
+  
   <div className="hero-content text-neutral-content text-center bg-gray-500">
     <div className="max-w-md">
+   <div className='text-3xl mb-5 text-green-500 font-bold pt-3'>
+   <Typewriter
+        words={["Hello, Users! Welcome to our Website!"]}
+        loop={0} // Set to 0 for infinite loops
+        cursor
+        cursorStyle="|"
+        typeSpeed={70}
+        deleteSpeed={50}
+        delaySpeed={1000}
+        
+      />
+   </div>
       <h1 className="mb-5 text-5xl font-bold">Tracking Services</h1>
+      
       <p className="mb-5">
       Once an application is submitted, the center often provides tracking services to inform applicants about the status of their visa application.
       </p>

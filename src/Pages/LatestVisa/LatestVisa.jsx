@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { Slide } from 'react-awesome-reveal'
+
 export default function LatestVisa() {
   const [latest, setLatest] = useState([])
 
@@ -13,9 +15,12 @@ export default function LatestVisa() {
  
   return (
    <div className='mx-auto w-10/12 my-10'>
-   
-    <h1 className='text-center text-4xl font-extrabold my-8'>Latest Visa</h1>
-    <div className='grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-5 '>
+     <Slide direction="up" duration={1000} delay={300} triggerOnce>
+      
+     <h1 className='text-center text-4xl font-extrabold my-8'>Latest Visa</h1>
+</Slide>
+     <Slide direction="right" duration={1000} delay={300} triggerOnce>
+     <div className='grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-5 '>
       {
         latest.map((update)=> <div key={update._id} className="card bg-base-100  shadow-xl">
         <figure className="px-10 pt-10">
@@ -38,9 +43,13 @@ export default function LatestVisa() {
       }
       
     </div>
+</Slide>
+  
+   
    <div className='text-lg flex mt-5 text-center mx-auto justify-items-center btn'>
    <Link to="/all-visas">See All Visas</Link>
    </div>
+   
    </div>
   )
 }

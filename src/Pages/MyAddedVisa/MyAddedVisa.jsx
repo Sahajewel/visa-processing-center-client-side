@@ -21,6 +21,13 @@ const [addedVisa, setAddedVisa] = useState([])
    <p className='text-center text-white my-5 text-lg'>{addedVisa.fee}</p>
    <p className='text-center text-white my-5 text-lg pb-5'>{addedVisa.validity}</p>
    <p>{addedVisa.application_method}</p>
+   <div className='flex  justify-center'>
+   <button className='btn'>Update</button>
+   </div>
+   <div  className='flex justify-center mt-4 pb-4 mb-8'>
+
+   <button className='btn '>Delete</button>
+   </div>
    </div>
       <Footer></Footer>
     </div>

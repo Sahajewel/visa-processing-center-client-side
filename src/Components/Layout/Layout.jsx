@@ -7,11 +7,17 @@ import VisaProcessSteps from '../VisaProcess/VisaProcess'
 import LatestVisa from '../../Pages/LatestVisa/LatestVisa'
 
 
+
+
+
+
 export default function Layout() {
   return (
     <div>
       <Navbar></Navbar>
       <Carousel></Carousel>
+  
+    
       <LatestVisa></LatestVisa>
       <VisaEligibilityChecker></VisaEligibilityChecker>
       <VisaProcessSteps></VisaProcessSteps>
