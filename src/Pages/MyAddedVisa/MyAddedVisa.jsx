@@ -64,7 +64,7 @@ fetch(`https://assignment-10-server-flax-delta.vercel.app/update/${email}`,{
         <Navbar></Navbar>
         <ToastContainer></ToastContainer>
   <div className='min-h-[70vh]'>
-  <div className='mx-auto w-6/12 bg-gray-500 my-10'>
+  <div className='mx-auto sm:w-10/12 md:w-6/12 bg-gray-500 my-10'>
   <h1 className='text-3xl font-bold pt-8 text-white text-center'>My Added Visa</h1>
    <p className='text-center my-10 py-5 text-white text-2xl font-bold'>Country: {addedVisa.countryName}</p>
    <img className='w-40 mx-auto' src={addedVisa.countryImage} alt="" />

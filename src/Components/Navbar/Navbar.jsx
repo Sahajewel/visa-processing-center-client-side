@@ -7,7 +7,7 @@ import ThemeToggle from '../Theme/ThemeToggle'
 // import ReactTooltip from 'react-tooltip';
 export default function Navbar() {
     const {loginUser, logout} = useContext(AuthContext)
-    const links = <div>
+    const links = <div className='sm:space-y-3 md:space-y-0 text-center p-2'>
         <NavLink className="mr-3 btn text-lg " to="/">Home</NavLink>
         <NavLink className="mr-3 btn text-lg " to="/all-visas">All Visas</NavLink>
         <NavLink className="mr-3 btn text-lg " to="/add-visa">Add Visa</NavLink>
@@ -15,7 +15,7 @@ export default function Navbar() {
         <NavLink className="mr-3 btn text-lg " to="/my-added-visa">My Added Visa</NavLink>
     </div>
   return (
-    <div className="navbar bg-gray-800 px-16">
+    <div className="navbar flex sm:flex-col md:flex-row bg-gray-800 px-16">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,7 +48,7 @@ export default function Navbar() {
     </ul>
   </div>
 
-  <div className="navbar-end">
+  <div className="navbar-end sm:mt-4 md:mt-0">
   <ThemeToggle></ThemeToggle>
   {
           loginUser && loginUser? <div className='flex justify-center items-center'>
@@ -63,7 +63,7 @@ export default function Navbar() {
             
           </div>
           :
-          <div>
+          <div className='flex justify-center items-center'>
              <Link to="/login" className="btn mr-5 text-lg">Login</Link>
              <Link to="/register" className="btn text-lg">Register</Link>
            
